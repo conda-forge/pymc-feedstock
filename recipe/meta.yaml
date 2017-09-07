@@ -10,8 +10,8 @@ source:
   sha256: e287a7d1821d55a41079fe0289d70b6f2ea905f4c6b1a9207bdf35425bdcae37
 
 build:
-  number: 0
-  skip: True  # [win or np==112]
+  number: 1
+  skip: True  # [win]
   script:
     - export LDFLAGS="-undefined dynamic_lookup -bundle"  # [osx]
     - python setup.py install
@@ -19,11 +19,15 @@ build:
 requirements:
   build:
     - python
-    - numpy x.x
+    - numpy 1.8.*  # [not (win and (py35 or py36))]
+    - numpy 1.9.*  # [win and py35]
+    - numpy 1.11.*  # [win and py36]
     - gcc  # [not win]
   run:
     - python
-    - numpy x.x
+    - numpy >=1.8  # [not (win and (py35 or py36))]
+    - numpy >=1.9  # [win and py35]
+    - numpy >=1.11  # [win and py36]
     - scipy
     - matplotlib
     - libgcc  # [linux]
