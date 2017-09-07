@@ -11,7 +11,7 @@ source:
 
 build:
   number: 0
-  skip: True  # [win or np==112]
+  skip: True  # [win]
   script:
     - export LDFLAGS="-undefined dynamic_lookup -bundle"  # [osx]
     - python setup.py install
