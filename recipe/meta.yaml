@@ -5,13 +5,12 @@ package:
   version: {{ version }}
 
 source:
-  fn: pymc-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/p/pymc/pymc-{{ version }}.tar.gz
   sha256: e287a7d1821d55a41079fe0289d70b6f2ea905f4c6b1a9207bdf35425bdcae37
 
 build:
-  number: 0
-  skip: True  # [win or np==112]
+  number: 1
+  skip: True  # [win]
   script:
     - export LDFLAGS="-undefined dynamic_lookup -bundle"  # [osx]
     - python setup.py install
@@ -19,11 +18,11 @@ build:
 requirements:
   build:
     - python
-    - numpy x.x
+    - numpy 1.8.*
     - gcc  # [not win]
   run:
     - python
-    - numpy x.x
+    - numpy >=1.8
     - scipy
     - matplotlib
     - libgcc  # [linux]
