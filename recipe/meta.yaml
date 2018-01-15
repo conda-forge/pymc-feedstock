@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/pymc-devs/pymc/archive/v{{version}}.tar.gz
-  sha256: 6d929de0b16eedd3594121674f41e59a92d73079
+  sha256: 82088feb330a531154c4be5a0ee323f59dc74380d8a7364414e9dc6102004abc
 
 build:
   number: 0
