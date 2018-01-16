@@ -85,7 +85,7 @@ Terminology
 Updating pymc-feedstock
 =======================
 
-If you would like to improve the pymc recipe or build a new
+If you would like to improve the pymc recipe or build a new 
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
