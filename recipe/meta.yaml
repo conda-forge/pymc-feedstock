@@ -20,6 +20,7 @@ requirements:
     - python
     - numpy 1.8.*
     - gcc  # [not win]
+    - setuptools
   run:
     - python
     - numpy >=1.8
