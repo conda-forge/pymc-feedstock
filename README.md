@@ -15,14 +15,16 @@ PyMC is a python module that implements Bayesian statistical models and fitting 
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/pymc-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/pymc-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/pymc-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/pymc-feedstock)
-Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/pymc-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/pymc-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/pymc-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/pymc-feedstock)
+![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pymc/badges/version.svg)](https://anaconda.org/conda-forge/pymc)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pymc/badges/downloads.svg)](https://anaconda.org/conda-forge/pymc)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pymc-green.svg)](https://anaconda.org/conda-forge/pymc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pymc.svg)](https://anaconda.org/conda-forge/pymc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pymc.svg)](https://anaconda.org/conda-forge/pymc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pymc.svg)](https://anaconda.org/conda-forge/pymc) |
 
 Installing pymc
 ===============
@@ -85,7 +87,7 @@ Terminology
 Updating pymc-feedstock
 =======================
 
-If you would like to improve the pymc recipe or build a new 
+If you would like to improve the pymc recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
