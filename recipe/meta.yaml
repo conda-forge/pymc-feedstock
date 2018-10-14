@@ -9,7 +9,7 @@ source:
   sha256: 12765987a5d64eaf210b1a32053990a0a4cacf2458e93d9b35ebab239032a4b5
 
 build:
-  number: 0
+  number: 1000
   skip: True  # [win]
   script:
     - export LDFLAGS="-undefined dynamic_lookup -bundle"  # [osx]
