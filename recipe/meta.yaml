@@ -11,6 +11,7 @@ source:
 build:
   number: 1000
   skip: True  # [win]
+  skip: True  # [py>36]
   script:
     - export LDFLAGS="-undefined dynamic_lookup -bundle"  # [osx]
     - "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
