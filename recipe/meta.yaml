@@ -13,22 +13,22 @@ build:
   skip: True  # [win]
   script:
     - export LDFLAGS="-undefined dynamic_lookup -bundle"  # [osx]
-    - python setup.py install
+    - "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
 
 requirements:
   build:
+    - {{ compiler('c') }}
+    - {{ compiler('fortran') }}
+  host:
     - python
-    - numpy 1.8.*
-    - gcc  # [not win]
-    - setuptools
+    - numpy
+    - pip
   run:
     - python
-    - numpy >=1.8
+    - {{ pin_compatible('numpy') }}
     - scipy
     - matplotlib
     - openblas
-    - libgcc  # [linux]
-    - libgfortran  # [osx]
 
 test:
   imports:
