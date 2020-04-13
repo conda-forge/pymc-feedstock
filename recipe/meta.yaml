@@ -11,10 +11,9 @@ source:
 build:
   number: 0
   skip: true  # [win]
-  skip: true  # [py>36]
   script:
     - export LDFLAGS="-undefined dynamic_lookup -bundle"  # [osx]
-    - {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -30,7 +29,6 @@ requirements:
     - python
     - {{ pin_compatible('numpy') }}
     - scipy
-    - matplotlib-base
 
 test:
   imports:
@@ -46,6 +44,10 @@ test:
     - pymc.gp.cov_funs.isotropic_cov_funs
     - pymc.gp.incomplete_chol
     - pymc.gp.linalg_utils
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: http://github.com/pymc-devs/pymc
