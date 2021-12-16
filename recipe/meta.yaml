@@ -1,49 +1,49 @@
-{% set version = "2.3.8" %}
+{% set version = "4.0.0b1" %}
 
 package:
   name: pymc
   version: {{ version }}
 
 source:
-  url: https://github.com/pymc-devs/pymc/archive/v{{ version }}.tar.gz
-  sha256: 200a28469d574a370fa9b55cd92f112f8ad09f71674bdae514437039e953689b
+  url: https://pypi.io/packages/source/p/pymc/pymc-{{ version }}.tar.gz
+  sha256: ca3dc8cb3f7bf7f9143c2c5ff32675d0b9034edd98666ba1f07a9ff3d296aba9
 
 build:
-  number: 2
-  skip: true  # [win]
-  script:
-    - export LDFLAGS="-undefined dynamic_lookup -bundle"  # [osx]
-    - {{ PYTHON }} -m pip install . -vv
+  number: 0
+  skip: true  # [py<37]
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
-  build:
-    - {{ compiler('c') }}
-    - {{ compiler('fortran') }}
   host:
-    - libblas
-    - libcblas
     - python
-    - numpy
     - pip
   run:
     - python
-    - {{ pin_compatible('numpy') }}
-    - scipy
+    - aesara ==2.3.2
+    - aeppl ==0.0.18
+    - arviz >=0.11.4
+    - cachetools >=4.2.1
+    - cloudpickle
+    - fastprogress >=0.2.0
+    - numpy >=1.15.0
+    - pandas >=0.24.0
+    - scipy >=1.4.1
+    - semver
+    - typing-extensions >=3.7.4
+    - cxx-compiler  # [not win]
+    - m2w64-toolchain  # [win]
 
 test:
   imports:
     - pymc
-    - pymc.database
-    - pymc.examples
+    - pymc.backends
+    - pymc.distributions
     - pymc.gp
-    - pymc.gp.cov_funs
-    - pymc.Container_values
-    - pymc.LazyFunction
-    - pymc.flib
-    - pymc.gp.cov_funs.distances
-    - pymc.gp.cov_funs.isotropic_cov_funs
-    - pymc.gp.incomplete_chol
-    - pymc.gp.linalg_utils
+    - pymc.step_methods
+    - pymc.tests
+    - pymc.tuning
+    - pymc.variational
+    - pymc.ode
   commands:
     - pip check
   requires:
@@ -51,17 +51,16 @@ test:
 
 about:
   home: http://github.com/pymc-devs/pymc
-  license: AFL-3.0
-  license_family: OTHER
+  license: Apache-2.0
   license_file: LICENSE
-  summary: 'PyMC: Bayesian Stochastic Modelling in Python'
-
-  description: |
-    PyMC is a python module that implements Bayesian statistical models and fitting algorithms, including Markov chain Monte Carlo. Its flexibility and extensibility make it applicable to a large suite of problems. Along with core sampling functionality, PyMC includes methods for summarizing output, plotting, goodness-of-fit and convergence diagnostics.
-  doc_url: http://pymc-devs.github.io/pymc/
-  dev_url: https://github.com/pymc-devs/pymc
+  license_family: Apache
+  summary: Probabilistic Programming in Python
 
 extra:
   recipe-maintainers:
+    - ericmjl
+    - twiecki
     - fonnesbeck
     - ocefpaf
+    - michaelosthege
+    - maresb
