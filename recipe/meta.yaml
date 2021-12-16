@@ -19,15 +19,16 @@ requirements:
     - pip
   run:
     - python
-    - arviz >=0.11.0
+    - aesara ==2.3.2
+    - aeppl ==0.0.18
+    - arviz >=0.11.4
     - cachetools >=4.2.1
-    - dill
+    - cloudpicklel
     - fastprogress >=0.2.0
     - numpy >=1.15.0
     - pandas >=0.24.0
-    - scipy >=1.2.0
+    - scipy >=1.4.1
     - semver
-    - aesara >=2.2.2
     - typing-extensions >=3.7.4
     - cxx-compiler  # [not win]
     - m2w64-toolchain  # [win]
