@@ -22,13 +22,15 @@ requirements:
   host:
     - python
     - mkl-devel    {{ mkl }}
-    - numpy-devel  {{ numpy }}
+    - numpy-devel  {{ numpy }}  # [not (osx and arm64) and py<=39]
+    - numpy {{ numpy }}  # [(osx and arm64) or py>39]
     - pip
   run:
     - python
     - scipy
     # - matplotlib
-    - numpy-devel  {{ numpy }}
+    - numpy-devel  {{ numpy }}  # [not (osx and arm64) and py<=39]
+    - numpy {{ numpy }}         # [(osx and arm64) or py>39]
 
 test:
   imports:
