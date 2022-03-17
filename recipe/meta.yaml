@@ -1,4 +1,4 @@
-{% set version = "4.0.0b3" %}
+{% set version = "4.0.0b4" %}
 
 package:
   name: pymc
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pymc/pymc-{{ version }}.tar.gz
-  sha256: 185ad4a19a7870a38c35352f8169ae1d57637b8704bd3fa675f2b7d43a0c420d
+  sha256: 645d7618a83213debb6f09e63eec51236b90395406dff51f1f572c00885f1543
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py<37]
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -22,8 +22,8 @@ requirements:
     - pip
   run:
     - python
-    - aesara ==2.4.0
-    - aeppl ==0.0.26
+    - aesara ==2.5.1
+    - aeppl ==0.0.27
     - arviz >=0.11.4
     - cachetools >=4.2.1
     - cloudpickle
