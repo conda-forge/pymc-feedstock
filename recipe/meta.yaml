@@ -1,4 +1,4 @@
-{% set version = "4.0.0b5" %}
+{% set version = "4.0.0b6" %}
 
 package:
   name: pymc
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pymc/pymc-{{ version }}.tar.gz
-  sha256: a2ba2dbc1cb7a42554f86afe705b022bb798a6892c4fc31c513c3af3d5cf4ba3
+  sha256: 73f24295a90132df641ad5e5140c02e988dbc8fd06ed9f1ac55b94d269efd7bf
 
 build:
   number: 0
@@ -29,7 +29,6 @@ requirements:
     - cloudpickle
     - fastprogress >=0.2.0
     - numpy >=1.15.0
-    - pandas >=0.24.0
     - scipy >=1.4.1
     - semver
     - typing-extensions >=3.7.4
