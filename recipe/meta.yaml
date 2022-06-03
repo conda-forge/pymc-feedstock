@@ -1,4 +1,4 @@
-{% set version = "4.0.0b6" %}
+{% set version = "4.0.0" %}
 
 package:
   name: pymc
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pymc/pymc-{{ version }}.tar.gz
-  sha256: 73f24295a90132df641ad5e5140c02e988dbc8fd06ed9f1ac55b94d269efd7bf
+  sha256: 08cac213bf52d5a16b0aeef6ff6a312780a6a6ae935a2603fa607f4c105726af
 
 build:
   number: 0
