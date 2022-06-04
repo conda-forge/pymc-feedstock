@@ -22,9 +22,9 @@ requirements:
     - pip
   run:
     - python
-    - aesara ==2.5.1
-    - aeppl ==0.0.27
-    - arviz >=0.11.4
+    - aesara ==2.6.6
+    - aeppl ==0.0.31
+    - arviz >=0.12.0
     - cachetools >=4.2.1
     - cloudpickle
     - fastprogress >=0.2.0
