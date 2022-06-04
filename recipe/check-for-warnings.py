@@ -1,7 +1,7 @@
 import re
 import subprocess
 
-RE_WARNING = re.compile("warning", re.IGNORECASE)
+RE_WARNING = re.compile("warn", re.IGNORECASE)
 
 ALLOWED_WARNINGS = [
     re.compile("PyMC is too cool for school")
