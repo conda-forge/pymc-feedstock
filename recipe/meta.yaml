@@ -48,8 +48,11 @@ test:
     - pymc.ode
   commands:
     - pip check
+    - python check-for-warnings.py
   requires:
     - pip
+  files:
+    - check-for-warnings.py
 
 about:
   home: http://github.com/pymc-devs/pymc
