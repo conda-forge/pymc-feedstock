@@ -20,6 +20,8 @@ requirements:
   host:
     - python
     - pip
+    - cxx-compiler  # [not win]
+    - m2w64-toolchain  # [win]
   run:
     - python
     - aesara ==2.6.6
@@ -32,8 +34,6 @@ requirements:
     - scipy >=1.4.1
     - semver
     - typing-extensions >=3.7.4
-    - cxx-compiler  # [not win]
-    - m2w64-toolchain  # [win]
 
 test:
   imports:
