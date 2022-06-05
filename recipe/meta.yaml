@@ -33,7 +33,6 @@ outputs:
         - fastprogress >=0.2.0
         - numpy >=1.15.0
         - scipy >=1.4.1
-        - semver
         - typing-extensions >=3.7.4
     test:
       imports:
@@ -98,3 +97,4 @@ extra:
     - ocefpaf
     - michaelosthege
     - maresb
+    - ricardoV94
