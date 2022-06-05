@@ -1,0 +1,11 @@
+# A list of regex for allowed warnings to ignore during testing of "pymc-base".
+# (More warnings are acceptable here since libraries will be missing.)
+
+Could not locate executable g77
+Could not locate executable f77
+Could not locate executable ifort
+Could not locate executable ifl
+Could not locate executable f90
+Could not locate executable efl
+Using NumPy C-API based implementation for BLAS functions
+g\+\+ not detected
