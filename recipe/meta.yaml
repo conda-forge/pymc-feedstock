@@ -66,8 +66,8 @@ outputs:
         - m2w64-toolchain  # [win]
         # BLAS:
         # On Apple M1, use openblas, for everything else, use mkl-service.
-        - openblas # [arm64]
-        - mkl-service # [not arm64]
+        - openblas  # [arm64]
+        - mkl-service  # [not arm64]
     test:
       imports:
         - pymc
