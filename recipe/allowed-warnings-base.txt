@@ -8,3 +8,4 @@ Could not locate executable ifl
 Could not locate executable f90
 Could not locate executable efl
 Using NumPy C-API based implementation for BLAS functions
+g++ not detected
