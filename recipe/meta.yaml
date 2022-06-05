@@ -58,6 +58,7 @@ outputs:
       host:
         - python
       run:
+        - {{ pin_subpackage("pymc-base", exact=True) }}
         - cxx-compiler  # [not win]
         - m2w64-toolchain  # [win]
         - mkl-service
