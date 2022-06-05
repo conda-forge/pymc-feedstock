@@ -1,10 +1,18 @@
 import re
 import subprocess
+import sys
+from pathlib import Path
 
 RE_WARNING = re.compile("warn", re.IGNORECASE)
 
+if len(sys.argv) != 2:
+    print("Expecting a single command line argument with the list of allowed warnings.")
+    sys.exit(1)
+
+allowed_warnings_file_contents = Path(sys.argv[1]).read_text()
 ALLOWED_WARNINGS = [
-    re.compile("PyMC is too cool for school")
+    re.compile(line) for line in allowed_warnings_file_contents.splitlines()
+    if line.strip() and not line.strip().startswith("#")
 ]
 
 result = subprocess.check_output(
