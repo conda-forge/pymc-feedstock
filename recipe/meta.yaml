@@ -15,7 +15,7 @@ build:
 outputs:
   - name: pymc-base
     build:
-      script: {{ PYTHON }} -m pip install . -vv
+      script: python -m pip install . -vv
     requirements:
       build:
         - python                                 # [build_platform != target_platform]
