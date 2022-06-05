@@ -15,7 +15,8 @@ build:
 outputs:
   - name: pymc-base
     build:
-      script: python -m pip install . -vv
+      script:
+        - python -m pip install . --no-deps -vv
     requirements:
       build:
         - python                                 # [build_platform != target_platform]
@@ -58,6 +59,7 @@ outputs:
       host:
         - python
       run:
+        - python
         - {{ pin_subpackage("pymc-base", exact=True) }}
         - cxx-compiler  # [not win]
         - m2w64-toolchain  # [win]
