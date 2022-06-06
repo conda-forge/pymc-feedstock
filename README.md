@@ -1,5 +1,5 @@
-About pymc
-==========
+About pymc-suite
+================
 
 Home: http://github.com/pymc-devs/pymc
 
@@ -145,27 +145,28 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pymc-green.svg)](https://anaconda.org/conda-forge/pymc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pymc.svg)](https://anaconda.org/conda-forge/pymc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pymc.svg)](https://anaconda.org/conda-forge/pymc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pymc.svg)](https://anaconda.org/conda-forge/pymc) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pymc--base-green.svg)](https://anaconda.org/conda-forge/pymc-base) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pymc-base.svg)](https://anaconda.org/conda-forge/pymc-base) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pymc-base.svg)](https://anaconda.org/conda-forge/pymc-base) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pymc-base.svg)](https://anaconda.org/conda-forge/pymc-base) |
 
-Installing pymc
-===============
+Installing pymc-suite
+=====================
 
-Installing `pymc` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `pymc-suite` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `pymc` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `pymc, pymc-base` can be installed with `conda`:
 
 ```
-conda install pymc
+conda install pymc pymc-base
 ```
 
 or with `mamba`:
 
 ```
-mamba install pymc
+mamba install pymc pymc-base
 ```
 
 It is possible to list all of the versions of `pymc` available on your platform with `conda`:
@@ -235,17 +236,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating pymc-feedstock
-=======================
+Updating pymc-suite-feedstock
+=============================
 
-If you would like to improve the pymc recipe or build a new
+If you would like to improve the pymc-suite recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/pymc-feedstock are
+Note that all branches in the conda-forge/pymc-suite-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
@@ -265,5 +266,6 @@ Feedstock Maintainers
 * [@maresb](https://github.com/maresb/)
 * [@michaelosthege](https://github.com/michaelosthege/)
 * [@ocefpaf](https://github.com/ocefpaf/)
+* [@ricardoV94](https://github.com/ricardoV94/)
 * [@twiecki](https://github.com/twiecki/)
 
