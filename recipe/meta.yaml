@@ -1,7 +1,7 @@
 {% set version = "4.0.0" %}
 
 package:
-  name: pymc
+  name: pymc-suite  # https://github.com/conda/conda-build/issues/3933
   version: {{ version }}
 
 source:
