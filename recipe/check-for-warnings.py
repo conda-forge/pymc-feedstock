@@ -3,7 +3,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-RE_WARNING = re.compile("warn", re.IGNORECASE)
+RE_WARNING = re.compile("WARN|Could not locate", re.IGNORECASE)
 
 if len(sys.argv) != 2:
     print("Expecting a single command line argument with the list of allowed warnings.")
