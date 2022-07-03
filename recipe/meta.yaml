@@ -62,12 +62,7 @@ outputs:
       run:
         - python
         - {{ pin_subpackage("pymc-base", exact=True) }}
-        - cxx-compiler  # [not win]
-        - m2w64-toolchain  # [win]
-        # BLAS:
-        # On Apple M1, use openblas, for everything else, use mkl-service.
-        - openblas  # [arm64]
-        - mkl-service  # [not arm64]
+        - aesara
     test:
       imports:
         - pymc
