@@ -9,7 +9,7 @@ source:
   sha256: e69f2335e0cdb7205f8b80cadf1a5620cf9faef9c27175c09eb99c4839d0d182
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<37]
 
 outputs:
@@ -34,6 +34,7 @@ outputs:
         - cloudpickle
         - fastprogress >=0.2.0
         - numpy >=1.15.0
+        - pandas >=0.24.0
         - scipy >=1.4.1
         - typing-extensions >=3.7.4
     test:
