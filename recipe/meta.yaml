@@ -26,11 +26,6 @@ outputs:
         - pip
       run:
         - python
-        # While libpython is an implicit dependency and will thus be installed
-        # regardless of whether or not it's included here, it's also a direct
-        # dependency of aesara, so we mention it explicitly.
-        - libpython >=2.0  # [win]
-
         # https://github.com/pymc-devs/pymc/blob/v{{ version }}/requirements.txt
         - aeppl ==0.0.31
         - aesara-base ==2.7.4
