@@ -1,4 +1,4 @@
-{% set version = "4.1.1" %}
+{% set version = "4.1.2" %}
 
 package:
   name: pymc-suite  # https://github.com/conda/conda-build/issues/3933
@@ -27,8 +27,8 @@ outputs:
       run:
         - python
         # https://github.com/pymc-devs/pymc/blob/v{{ version }}/requirements.txt
-        - aeppl-base ==0.0.31=*_2
-        - aesara-base ==2.7.4=*_2
+        - aeppl-base ==0.0.32
+        - aesara-base ==2.7.5
         - arviz >=0.12.0
         - cachetools >=4.2.1
         - cloudpickle
@@ -63,24 +63,18 @@ outputs:
       run:
         - python
         - {{ pin_subpackage("pymc-base", exact=True) }}
-        # This last part with =*_1 is a temporary workaround since there are two
-        # builds for aesara-base v2.7.4 labeled like xyz_0 and abc_1.
-        # In the next version, we should remove this line and uncomment the subsequent
-        # lines.
-        - aesara ==2.7.4=*_2
-        # # As of Aesara v2.7.5, there is a 1-1 correspondence between the "aesara-base"
-        # # package and the "aesara" package of the same version and build number on
-        # # which it depends. Thus the pin from the "aesara-base" package above will
-        # # implicitly transfer here to the "aesara" package.
-        # - aesara >=2.7.5
+        # As of Aesara v2.7.5, there is a 1-1 correspondence between the "aesara-base"
+        # package and the "aesara" package of the same version and build number on
+        # which it depends. Thus the pin from the "aesara-base" package above will
+        # implicitly transfer here to the "aesara" package.
+        - aesara >=2.7.5
 
         # The same story for aeppl:
-        - aeppl ==0.0.31=*_3
-        # # As of aeppl v0.0.32, there is a 1-1 correspondence between the "aeppl-base"
-        # # package and the "aeppl" package of the same version and build number on
-        # # which it depends. Thus the pin from the "aeppl-base" package above will
-        # # implicitly transfer here to the "aeppl" package.
-        # - aeppl >=0.0.32
+        # As of aeppl v0.0.32, there is a 1-1 correspondence between the "aeppl-base"
+        # package and the "aeppl" package of the same version and build number on
+        # which it depends. Thus the pin from the "aeppl-base" package above will
+        # implicitly transfer here to the "aeppl" package.
+        - aeppl >=0.0.32
     test:
       imports:
         - pymc
