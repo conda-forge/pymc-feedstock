@@ -28,7 +28,7 @@ outputs:
         - python
         # https://github.com/pymc-devs/pymc/blob/v{{ version }}/requirements.txt
         - aeppl-base ==0.0.31=*_2
-        - aesara-base ==2.7.4
+        - aesara-base ==2.7.4=*_2
         - arviz >=0.12.0
         - cachetools >=4.2.1
         - cloudpickle
@@ -67,7 +67,7 @@ outputs:
         # builds for aesara-base v2.7.4 labeled like xyz_0 and abc_1.
         # In the next version, we should remove this line and uncomment the subsequent
         # lines.
-        - aesara ==2.7.4=*_1
+        - aesara ==2.7.4=*_2
         # # As of Aesara v2.7.5, there is a 1-1 correspondence between the "aesara-base"
         # # package and the "aesara" package of the same version and build number on
         # # which it depends. Thus the pin from the "aesara-base" package above will
