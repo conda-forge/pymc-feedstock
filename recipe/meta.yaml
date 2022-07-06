@@ -75,7 +75,7 @@ outputs:
         # - aesara >=2.7.5
 
         # The same story for aeppl:
-        - aeppl ==0.0.31=*_2
+        - aeppl ==0.0.31=*_3
         # # As of aeppl v0.0.32, there is a 1-1 correspondence between the "aeppl-base"
         # # package and the "aeppl" package of the same version and build number on
         # # which it depends. Thus the pin from the "aeppl-base" package above will
