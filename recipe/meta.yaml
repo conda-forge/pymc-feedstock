@@ -73,6 +73,14 @@ outputs:
         # # which it depends. Thus the pin from the "aesara-base" package above will
         # # implicitly transfer here to the "aesara" package.
         # - aesara >=2.7.5
+
+        # The same story for aeppl:
+        - aeppl ==0.0.31=*_2
+        # # As of aeppl v0.0.32, there is a 1-1 correspondence between the "aeppl-base"
+        # # package and the "aeppl" package of the same version and build number on
+        # # which it depends. Thus the pin from the "aeppl-base" package above will
+        # # implicitly transfer here to the "aeppl" package.
+        # - aeppl >=0.0.32
     test:
       imports:
         - pymc
