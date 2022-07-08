@@ -58,6 +58,7 @@ outputs:
         - allowed-warnings-base.txt
   - name: pymc
     build:
+      script: []
     requirements:
       host:
         - python
