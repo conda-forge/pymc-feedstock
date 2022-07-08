@@ -9,3 +9,13 @@ Could not locate executable f90
 Could not locate executable efl
 Using NumPy C-API based implementation for BLAS functions
 g\+\+ not detected
+
+# These warnings arise on Windows, and don't seem to be confirmed yet as okay:
+g\+\+ not available
+Could not locate executable gfortran
+Could not locate executable f95
+Could not locate executable g95
+Could not locate executable efort
+Could not locate executable efc
+Could not locate executable flang
+don't know how to compile Fortran code on platform 'nt'
