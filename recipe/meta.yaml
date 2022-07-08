@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pymc/pymc-{{ version }}.tar.gz
-  sha256: cda36c7ef1870cc8ee28b7acc1b362024badc62d9af9dff12e04d96ae4b50cf0
+  sha256: 2d0c178b72099b9294c6e1a017976a5ebeda9cb8b31c22797846df37f6826044
 
 build:
   number: 0
