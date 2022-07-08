@@ -10,11 +10,13 @@ source:
 
 build:
   number: 0
-  skip: true  # [py<38]
 
 outputs:
   - name: pymc-base
     build:
+      # This skip should be duplicated below in the pymc section.
+      # Ref: <https://github.com/conda-forge/conda-smithy/issues/1641>
+      skip: true  # [py<38]
       script:
         - python -m pip install . --no-deps -vv
     requirements:
@@ -58,6 +60,9 @@ outputs:
         - allowed-warnings-base.txt
   - name: pymc
     build:
+      # This skip should be duplicated above in the pymc-base section.
+      # Ref: <https://github.com/conda-forge/conda-smithy/issues/1641>
+      skip: true  # [py<38]
       script:
         - echo "Nothing to build here, just add dependencies."
     requirements:
