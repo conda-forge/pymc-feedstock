@@ -57,6 +57,7 @@ outputs:
         - check-for-warnings.py
         - allowed-warnings-base.txt
   - name: pymc
+    build:
     requirements:
       host:
         - python
