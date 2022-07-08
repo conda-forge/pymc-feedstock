@@ -58,7 +58,8 @@ outputs:
         - allowed-warnings-base.txt
   - name: pymc
     build:
-      script: []
+      script:
+        - echo "Nothing to build here, just add dependencies."
     requirements:
       host:
         - python
