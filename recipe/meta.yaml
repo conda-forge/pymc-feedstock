@@ -30,7 +30,7 @@ outputs:
         - python
         # https://github.com/pymc-devs/pymc/blob/v{{ version }}/requirements.txt
         - aeppl-base ==0.0.32
-        - aesara-base ==2.7.5
+        - aesara-base ==2.7.7
         - arviz >=0.12.0
         - cachetools >=4.2.1
         - cloudpickle
