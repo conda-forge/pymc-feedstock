@@ -1,4 +1,4 @@
-{% set version = "4.1.3" %}
+{% set version = "4.1.4" %}
 
 package:
   name: pymc-suite  # https://github.com/conda/conda-build/issues/3933
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pymc/pymc-{{ version }}.tar.gz
-  sha256: f90b3d55b71c9dbe3078db110c85483758e739cc3f361e912f6726019d78b4a1
+  sha256: 9ac2a39778c44709806d57f2c2640c7bc06e33420cd399b5669482585396c978
 
 build:
   number: 0
@@ -16,7 +16,7 @@ outputs:
     build:
       # This skip should be duplicated below in the pymc section.
       # Ref: <https://github.com/conda-forge/conda-smithy/issues/1641>
-      skip: true  # [py<38]
+      skip: true  # [py<37]
       script:
         - python -m pip install . --no-deps -vv
     requirements:
@@ -29,8 +29,8 @@ outputs:
       run:
         - python
         # https://github.com/pymc-devs/pymc/blob/v{{ version }}/requirements.txt
-        - aeppl-base ==0.0.32
-        - aesara-base ==2.7.7
+        - aeppl-base ==0.0.33
+        - aesara-base ==2.7.9
         - arviz >=0.12.0
         - cachetools >=4.2.1
         - cloudpickle
@@ -62,7 +62,7 @@ outputs:
     build:
       # This skip should be duplicated above in the pymc-base section.
       # Ref: <https://github.com/conda-forge/conda-smithy/issues/1641>
-      skip: true  # [py<38]
+      skip: true  # [py<37]
       script:
         - echo "Nothing to build here, just add dependencies."
     requirements:
