@@ -29,7 +29,7 @@ outputs:
       run:
         - python
         # https://github.com/pymc-devs/pymc/blob/v{{ version }}/requirements.txt
-        - aeppl-base ==0.0.33
+        - aeppl-base ==0.0.34
         - aesara-base ==2.7.9
         - arviz >=0.12.0
         - cachetools >=4.2.1
