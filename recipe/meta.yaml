@@ -14,20 +14,15 @@ build:
 outputs:
   - name: pymc-base
     build:
-      # This skip should be duplicated below in the pymc section.
-      # Ref: <https://github.com/conda-forge/conda-smithy/issues/1641>
-      skip: true  # [py<=37]
+      noarch: python
       script:
         - python -m pip install . --no-deps -vv
     requirements:
-      build:
-        - python                                 # [build_platform != target_platform]
-        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
       host:
-        - python
+        - python >=3.8
         - pip
       run:
-        - python
+        - python >=3.8
         # https://github.com/pymc-devs/pymc/blob/v{{ version }}/requirements.txt
         - aeppl-base ==0.0.35
         - aesara-base ==2.8.2
@@ -60,16 +55,11 @@ outputs:
         - allowed-warnings-base.txt
   - name: pymc
     build:
-      # This skip should be duplicated above in the pymc-base section.
-      # Ref: <https://github.com/conda-forge/conda-smithy/issues/1641>
-      skip: true  # [py<=37]
+      noarch: python
       script:
         - echo "Nothing to build here, just add dependencies."
     requirements:
-      host:
-        - python
       run:
-        - python
         - {{ pin_subpackage("pymc-base", exact=True) }}
         # As of Aesara v2.7.5, there is a 1-1 correspondence between the "aesara-base"
         # package and the "aesara" package of the same version and build number on
