@@ -24,8 +24,8 @@ outputs:
       run:
         - python >=3.8
         # https://github.com/pymc-devs/pymc/blob/v{{ version }}/requirements.txt
-        - aeppl-base ==0.0.35
-        - aesara-base ==2.8.2
+        - aeppl-base ==0.0.36
+        - aesara-base ==2.8.6
         - arviz >=0.12.0
         - cachetools >=4.2.1
         - cloudpickle
