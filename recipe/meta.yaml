@@ -1,4 +1,4 @@
-{% set version = "4.2.0" %}
+{% set version = "4.2.1" %}
 
 package:
   name: pymc-suite  # https://github.com/conda/conda-build/issues/3933
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pymc/pymc-{{ version }}.tar.gz
-  sha256: 4b09f9fe6589318bac0328337ca3c0ab5a18cd62129cf712b2a1d60fe490e6e0
+  sha256: f8172249a05543f0c3da35e5b49edafa96f355ac2d5c4745d61200177b54c8d7
 
 build:
   number: 0
@@ -24,8 +24,8 @@ outputs:
       run:
         - python >=3.8
         # https://github.com/pymc-devs/pymc/blob/v{{ version }}/requirements.txt
-        - aeppl-base ==0.0.35
-        - aesara-base ==2.8.2
+        - aeppl-base ==0.0.36
+        - aesara-base ==2.8.6
         - arviz >=0.12.0
         - cachetools >=4.2.1
         - cloudpickle
