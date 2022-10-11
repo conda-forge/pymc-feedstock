@@ -24,8 +24,8 @@ outputs:
       run:
         - python >=3.8
         # https://github.com/pymc-devs/pymc/blob/v{{ version }}/requirements.txt
-        - aeppl-base ==0.0.36
-        - aesara-base ==2.8.6
+        - aeppl-base ==0.0.38
+        - aesara-base ==2.8.7
         - arviz >=0.12.0
         - cachetools >=4.2.1
         - cloudpickle
@@ -65,14 +65,14 @@ outputs:
         # package and the "aesara" package of the same version and build number on
         # which it depends. Thus the pin from the "aesara-base" package above will
         # implicitly transfer here to the "aesara" package.
-        - aesara >=2.7.5
+        - aesara >=2.8.7
 
         # The same story for aeppl:
         # As of aeppl v0.0.32, there is a 1-1 correspondence between the "aeppl-base"
         # package and the "aeppl" package of the same version and build number on
         # which it depends. Thus the pin from the "aeppl-base" package above will
         # implicitly transfer here to the "aeppl" package.
-        - aeppl >=0.0.32
+        - aeppl >=0.0.38
     test:
       imports:
         - pymc
