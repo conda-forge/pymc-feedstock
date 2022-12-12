@@ -24,14 +24,13 @@ outputs:
       run:
         - python >=3.8
         # https://github.com/pymc-devs/pymc/blob/v{{ version }}/requirements.txt
-        - aeppl-base ==0.0.38
-        - aesara-base ==2.8.7
         - arviz >=0.13.0
         - cachetools >=4.2.1
         - cloudpickle
         - fastprogress >=0.2.0
         - numpy >=1.15.0
         - pandas >=0.24.0
+        - pytensor-base ==2.8.10
         - scipy >=1.4.1
         - typing-extensions >=3.7.4
     test:
@@ -61,18 +60,11 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage("pymc-base", exact=True) }}
-        # As of Aesara v2.7.5, there is a 1-1 correspondence between the "aesara-base"
-        # package and the "aesara" package of the same version and build number on
-        # which it depends. Thus the pin from the "aesara-base" package above will
-        # implicitly transfer here to the "aesara" package.
-        - aesara >=2.7.5
-
-        # The same story for aeppl:
-        # As of aeppl v0.0.32, there is a 1-1 correspondence between the "aeppl-base"
-        # package and the "aeppl" package of the same version and build number on
-        # which it depends. Thus the pin from the "aeppl-base" package above will
-        # implicitly transfer here to the "aeppl" package.
-        - aeppl >=0.0.32
+        # In PyTensor, there is a 1-1 correspondence between the "pytensor-base"
+        # package and the "pytensor" package of the same version and build number on
+        # which it depends. Thus the pin from the "pytensor-base" package above will
+        # implicitly transfer here to the "pytensor" package.
+        - pytensor
     test:
       imports:
         - pymc
