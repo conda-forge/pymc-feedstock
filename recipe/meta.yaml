@@ -40,7 +40,6 @@ outputs:
         - pymc.distributions
         - pymc.gp
         - pymc.step_methods
-        - pymc.tests
         - pymc.tuning
         - pymc.variational
         - pymc.ode
@@ -72,7 +71,6 @@ outputs:
         - pymc.distributions
         - pymc.gp
         - pymc.step_methods
-        - pymc.tests
         - pymc.tuning
         - pymc.variational
         - pymc.ode
