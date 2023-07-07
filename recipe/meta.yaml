@@ -21,11 +21,14 @@ requirements:
     - {{ compiler('fortran') }}
   host:
     - python
+    - pip
+    - setuptools
     - mkl-devel  {{ mkl }}      # [blas_impl == "mkl"]
     - openblas-devel {{ openblas }}  # [blas_impl == "openblas"]
     - numpy-devel  {{ numpy }}  # [not (osx and arm64) and py<=39]
     - numpy {{ numpy }}         # [(osx and arm64) or py>39]
-    - pip
+    - scipy 1.9.3
+    - typing-extensions 4.6.3
   run:
     - python
     - scipy
