@@ -27,6 +27,12 @@ requirements:
     - openblas-devel {{ openblas }}  # [blas_impl == "openblas"]
     - numpy-devel  {{ numpy }}  # [not (osx and arm64) and py<=39]
     - numpy {{ numpy }}         # [(osx and arm64) or py>39]
+    - arviz >=0.13.0 # TODO: must update
+    - cachetools 4.2.2
+    - cloudpickle
+    - fastprogress 1.0.0
+    - pandas 1.5.3
+    - pytensor 2.12.3 # TODO: support because missing
     - scipy 1.9.3
     - typing-extensions 4.6.3
   run:
