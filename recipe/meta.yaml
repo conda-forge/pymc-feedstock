@@ -9,7 +9,7 @@ source:
   sha256: 2d6327b9ce0a9f7553abdcee90c5d4b42ccf6e3fc09461aefa400e84c3592e32
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: pymc-base
@@ -64,6 +64,7 @@ outputs:
         # which it depends. Thus the pin from the "pytensor-base" package above will
         # implicitly transfer here to the "pytensor" package.
         - pytensor
+        - python-graphviz
     test:
       imports:
         - pymc
@@ -74,6 +75,7 @@ outputs:
         - pymc.tuning
         - pymc.variational
         - pymc.ode
+        - pymc.model_graph
       commands:
         - pip check
         - python check-for-warnings.py allowed-warnings-main.txt
