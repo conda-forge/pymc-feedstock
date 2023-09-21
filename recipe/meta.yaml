@@ -64,6 +64,7 @@ outputs:
         # which it depends. Thus the pin from the "pytensor-base" package above will
         # implicitly transfer here to the "pytensor" package.
         - pytensor
+        - python-graphviz
     test:
       imports:
         - pymc
@@ -74,6 +75,7 @@ outputs:
         - pymc.tuning
         - pymc.variational
         - pymc.ode
+        - pymc.model_graph
       commands:
         - pip check
         - python check-for-warnings.py allowed-warnings-main.txt
