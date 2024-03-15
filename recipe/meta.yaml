@@ -1,4 +1,4 @@
-{% set version = "5.10.4" %}
+{% set version = "5.11.0" %}
 
 package:
   name: pymc-suite  # https://github.com/conda/conda-build/issues/3933
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pymc/pymc-{{ version }}.tar.gz
-  sha256: 18deabc2ff6aec09a3b38ce5e8507ce2cc3673fc1af983307fdb38e75a4f3319
+  sha256: 5e1e0ee810645f349922118c2b1de36d84a1dcdc1a20418b2b27baccb254c29c
 
 build:
   number: 0
@@ -30,7 +30,7 @@ outputs:
         - fastprogress >=0.2.0
         - numpy >=1.15.0
         - pandas >=0.24.0
-        - pytensor >=2.18.1,<2.19
+        - pytensor-base >=2.18.1,<2.19
         - scipy >=1.4.1
         - typing-extensions >=3.7.4
     test:
