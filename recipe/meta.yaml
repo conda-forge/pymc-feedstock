@@ -1,4 +1,4 @@
-{% set version = "5.12.0" %}
+{% set version = "5.13.0" %}
 
 package:
   name: pymc-suite  # https://github.com/conda/conda-build/issues/3933
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pymc/pymc-{{ version }}.tar.gz
-  sha256: 44e520986870db392f601d09b8b767527a7ea3f0b2cb59b0e7c34c3bc34f93da
+  sha256: af2641cd92eae84b26ec0ff1f1828a40349c4b9cc00ed056c56fb5cf5f972c09
 
 build:
   number: 0
@@ -19,18 +19,18 @@ outputs:
         - python -m pip install . --no-deps -vv
     requirements:
       host:
-        - python >=3.9
+        - python >=3.10
         - pip
       run:
-        - python >=3.9
+        - python >=3.10
         # https://github.com/pymc-devs/pymc/blob/v{{ version }}/requirements.txt
         - arviz >=0.13.0
         - cachetools >=4.2.1
         - cloudpickle
-        - fastprogress >=0.2.0
         - numpy >=1.15.0
         - pandas >=0.24.0
-        - pytensor-base >=2.19,<2.20
+        - pytensor-base >=2.20,<2.21
+        - rich >=13.7.1
         - scipy >=1.4.1
         - typing-extensions >=3.7.4
     test:
