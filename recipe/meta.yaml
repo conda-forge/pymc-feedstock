@@ -19,18 +19,18 @@ outputs:
         - python -m pip install . --no-deps -vv
     requirements:
       host:
-        - python >=3.9
+        - python >=3.10
         - pip
       run:
-        - python >=3.9
+        - python >=3.10
         # https://github.com/pymc-devs/pymc/blob/v{{ version }}/requirements.txt
         - arviz >=0.13.0
         - cachetools >=4.2.1
         - cloudpickle
-        - fastprogress >=0.2.0
         - numpy >=1.15.0
         - pandas >=0.24.0
-        - pytensor-base >=2.19,<2.20
+        - pytensor-base >=2.20,<2.21
+        - rich >=13.7.1
         - scipy >=1.4.1
         - typing-extensions >=3.7.4
     test:
