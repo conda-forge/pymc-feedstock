@@ -33,6 +33,7 @@ outputs:
         - rich >=13.7.1
         - scipy >=1.4.1
         - typing-extensions >=3.7.4
+        - threadpoolctl
     test:
       imports:
         - pymc
