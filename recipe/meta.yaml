@@ -9,7 +9,7 @@ source:
   sha256: 13a321f941bf6b87c590b3192e9aa28ac0eea787513a1feb786cc66541725d0f
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: pymc-base
