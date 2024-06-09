@@ -9,7 +9,7 @@ source:
   sha256: 13a321f941bf6b87c590b3192e9aa28ac0eea787513a1feb786cc66541725d0f
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: pymc-base
@@ -32,8 +32,8 @@ outputs:
         - pytensor-base >=2.22.1,<2.23
         - rich >=13.7.1
         - scipy >=1.4.1
+        - threadpoolctl >=3.1.0,<4.0.0
         - typing-extensions >=3.7.4
-        - threadpoolctl
     test:
       imports:
         - pymc
