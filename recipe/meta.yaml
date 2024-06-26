@@ -1,4 +1,4 @@
-{% set version = "5.15.1" %}
+{% set version = "5.16.0" %}
 
 package:
   name: pymc-suite  # https://github.com/conda/conda-build/issues/3933
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pymc/pymc-{{ version }}.tar.gz
-  sha256: 13a321f941bf6b87c590b3192e9aa28ac0eea787513a1feb786cc66541725d0f
+  sha256: cc8d62451a4db165417789a2e67c82928eddf7c7aa3cddf5e37cf1a0ff15f32b
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - name: pymc-base
@@ -29,7 +29,7 @@ outputs:
         - cloudpickle
         - numpy >=1.15.0
         - pandas >=0.24.0
-        - pytensor-base >=2.22.1,<2.23
+        - pytensor-base >=2.23,<2.24
         - rich >=13.7.1
         - scipy >=1.4.1
         - threadpoolctl >=3.1.0,<4.0.0
