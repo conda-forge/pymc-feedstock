@@ -29,7 +29,7 @@ outputs:
         - cloudpickle
         - numpy >=1.15.0
         - pandas >=0.24.0
-        - pytensor-base >=22.3,<2.24
+        - pytensor-base >=2.23,<2.24
         - rich >=13.7.1
         - scipy >=1.4.1
         - threadpoolctl >=3.1.0,<4.0.0
