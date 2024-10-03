@@ -20,6 +20,8 @@ outputs:
     requirements:
       host:
         - python >=3.10
+        - setuptools
+        - versioneer ==0.29
         - pip
       run:
         - python >=3.10
