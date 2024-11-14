@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/p/pymc/pymc-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/p/pymc/pymc-{{ version }}.tar.gz
   sha256: 81e0d7c98870411329309690d0a875686cba50df7e53d311921a444be0fee618
 
 build:
