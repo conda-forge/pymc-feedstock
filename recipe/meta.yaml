@@ -1,4 +1,4 @@
-{% set version = "5.19.0" %}
+{% set version = "5.19.1" %}
 
 package:
   name: pymc-suite  # https://github.com/conda/conda-build/issues/3933
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/pymc/pymc-{{ version }}.tar.gz
-  sha256: 0e9d56b9587bbae0a4edb3520087fccbbf66c18f34d8e2462ec7310fe3f8da54
+  sha256: 107c83f03bde6dd784347097b6b82441c2dd81ae1805d02c8304999a5bf11438
 
 build:
   number: 0
@@ -29,7 +29,7 @@ outputs:
         - arviz >=0.13.0
         - cachetools >=4.2.1
         - cloudpickle
-        - numpy >=1.15.0
+        - numpy >=1.25.0
         - pandas >=0.24.0
         - pytensor-base >=2.26.1,<2.27
         - rich >=13.7.1
