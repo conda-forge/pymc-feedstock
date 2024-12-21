@@ -17,7 +17,7 @@ outputs:
     build:
       noarch: python
       script:
-        - python -m pip install . --no-deps -vv
+        - python -m pip install . -vv --no-deps --no-build-isolation
     requirements:
       host:
         - python {{ python_min }}
