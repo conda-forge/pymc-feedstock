@@ -1,5 +1,5 @@
 {% set python_min = "3.10" %}
-{% set version = "5.21.0" %}
+{% set version = "5.21.1" %}
 
 package:
   name: pymc-suite  # https://github.com/conda/conda-build/issues/3933
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/pymc/pymc-{{ version }}.tar.gz
-  sha256: 492d7a6efc1406c5e4fcc60a017a4fae8045ba7a7c1aebef9efc2cca97772665
+  sha256: b5ab43e66a6714c37fa9448499d7545c4d275a1d33b644ce753394da09d60dab
 
 build:
   number: 0
