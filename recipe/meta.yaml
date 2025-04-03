@@ -32,7 +32,7 @@ outputs:
         - cloudpickle
         - numpy >=1.25.0
         - pandas >=0.24.0
-        - pytensor-base >=2.28.1,<2.29
+        - pytensor-base <2.31,>=2.30.2
         - rich >=13.7.1
         - scipy >=1.4.1
         - threadpoolctl >=3.1.0,<4.0.0
@@ -68,7 +68,7 @@ outputs:
         # package and the "pytensor" package of the same version and build number on
         # which it depends. Thus the pin from the "pytensor-base" package above will
         # implicitly transfer here to the "pytensor" package.
-        - pytensor
+        - pytensor <2.31,>=2.30.2
         - python-graphviz
     test:
       imports:
