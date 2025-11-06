@@ -5,6 +5,7 @@ context:
   version: "5.26.1"
 
 recipe:
+  # Add -suite to work around <https://github.com/conda/conda-build/issues/3933>
   name: pymc-suite
   version: ${{ version }}
 
