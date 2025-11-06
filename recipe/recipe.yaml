@@ -1,0 +1,124 @@
+schema_version: 1
+
+context:
+  python_min: "3.11"
+  version: "5.26.1"
+
+recipe:
+  # Add -suite to work around <https://github.com/conda/conda-build/issues/3933>
+  name: pymc-suite
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/p/pymc/pymc-${{ version }}.tar.gz
+  sha256: b49aeea21e4f50792aa7b0c537bd92abb5542950f93dc254ca86116d8a654a93
+
+build:
+  number: 1
+
+outputs:
+  - package:
+      name: pymc-base
+    build:
+      noarch: python
+      script:
+        - python -m pip install . -vv --no-deps --no-build-isolation
+    requirements:
+      host:
+        - python ${{ python_min }}.*
+        - setuptools
+        - versioneer ==0.29
+        - pip
+      run:
+        - python >=${{ python_min }}
+        # https://github.com/pymc-devs/pymc/blob/v{{ version }}/requirements.txt
+        - arviz >=0.13.0
+        - cachetools >=4.2.1
+        - cloudpickle
+        - numpy >=1.25.0
+        - pandas >=0.24.0
+        - pytensor-base >=2.35.0,<2.36
+        - rich >=13.7.1
+        - scipy >=1.4.1
+        - threadpoolctl >=3.1.0,<4.0.0
+        - typing_extensions >=3.7.4
+    tests:
+      - python:
+          imports:
+            - pymc
+            - pymc.backends
+            - pymc.distributions
+            - pymc.gp
+            - pymc.step_methods
+            - pymc.tuning
+            - pymc.variational
+            - pymc.ode
+          pip_check: true
+          python_version:
+            - ${{ python_min }}.*
+            - 3.*
+      - files:
+          recipe:
+            - check-for-warnings.py
+            - allowed-warnings-base.txt
+        requirements:
+          run:
+            - python ${{ python_min }}.*
+        script:
+          - python check-for-warnings.py allowed-warnings-base.txt
+  - package:
+      name: pymc
+    build:
+      noarch: generic
+      script:
+        - echo "Nothing to build here, just add dependencies."
+    requirements:
+      run:
+        - ${{ pin_subpackage("pymc-base", exact=True) }}
+        # In PyTensor, there is a 1-1 correspondence between the "pytensor-base"
+        # package and the "pytensor" package of the same version and build number on
+        # which it depends. Thus the pin from the "pytensor-base" package above will
+        # implicitly transfer here to the "pytensor" package.
+        - pytensor
+        - python-graphviz
+    tests:
+      - python:
+          imports:
+            - pymc
+            - pymc.backends
+            - pymc.distributions
+            - pymc.gp
+            - pymc.step_methods
+            - pymc.tuning
+            - pymc.variational
+            - pymc.ode
+            - pymc.model_graph
+          pip_check: true
+          python_version:
+            - ${{ python_min }}.*
+            - 3.*
+      - files:
+          recipe:
+            - check-for-warnings.py
+            - allowed-warnings-main.txt
+        requirements:
+          run:
+            - python ${{ python_min }}.*
+        script:
+          - python check-for-warnings.py allowed-warnings-main.txt
+
+about:
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: Probabilistic Programming in Python
+  homepage: http://github.com/pymc-devs/pymc
+
+extra:
+  recipe-maintainers:
+    - ericmjl
+    - twiecki
+    - fonnesbeck
+    - ocefpaf
+    - michaelosthege
+    - maresb
+    - ricardoV94
