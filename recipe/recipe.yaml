@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   python_min: "3.11"
-  version: "5.28.2"
+  version: "5.28.3"
 
 recipe:
   # Add -suite to work around <https://github.com/conda/conda-build/issues/3933>
@@ -11,7 +11,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/p/pymc/pymc-${{ version }}.tar.gz
-  sha256: 8bd81bb576a26bf03fb8f3830d446c341840b35135e8ad2ebd5fc6e529aaa17f
+  sha256: 24158583e9950cc2a72570f03a887d74c84983a5815cdde034ec6615e38b7e68
 
 build:
   number: 0
