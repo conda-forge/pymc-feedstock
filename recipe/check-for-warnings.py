@@ -1,7 +1,10 @@
+import datetime
 import re
 import subprocess
 import sys
 from pathlib import Path
+
+from platformdirs import user_cache_dir
 
 RE_WARNING = re.compile("WARN|Could not locate", re.IGNORECASE)
 
@@ -14,6 +17,13 @@ ALLOWED_WARNINGS = [
     re.compile(line) for line in allowed_warnings_file_contents.splitlines()
     if line.strip() and not line.strip().startswith("#")
 ]
+
+# Suppress ArviZ's once-per-day FutureWarning about the upcoming refactor by
+# pre-stamping its sentinel file with today's date. See `_warn_once_per_day` in
+# https://github.com/arviz-devs/arviz/blob/v0.x/arviz/__init__.py
+arviz_cache_dir = Path(user_cache_dir("arviz", "arviz"))
+arviz_cache_dir.mkdir(exist_ok=True, parents=True)
+(arviz_cache_dir / "daily_warning").write_text(datetime.date.today().isoformat())
 
 result = subprocess.check_output(
     ["python", "-c", "import pymc"],
