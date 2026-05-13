@@ -64,6 +64,7 @@ outputs:
         requirements:
           run:
             - python ${{ python_min }}.*
+            - platformdirs
         script:
           - python check-for-warnings.py allowed-warnings-base.txt
   - package:
@@ -104,6 +105,7 @@ outputs:
         requirements:
           run:
             - python ${{ python_min }}.*
+            - platformdirs
         script:
           - python check-for-warnings.py allowed-warnings-main.txt
 
